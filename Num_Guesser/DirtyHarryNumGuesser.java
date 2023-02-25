@@ -1,15 +1,15 @@
 /*
 NumGuesser.java
 Ken Sheridan
-10/02/23
+25/02/23
 */
-public class NumGuesser{
+public class DirtyHarryNumGuesser{
     //declare vars
     private int randomNum;
     private int userGuess;
     private String result;
     //constructor
-    public NumGuesser() {
+    public DirtyHarryNumGuesser() {
         randomNum=0;
         userGuess=0;
         result="";
