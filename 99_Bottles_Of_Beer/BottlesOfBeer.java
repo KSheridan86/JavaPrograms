@@ -7,6 +7,7 @@ K.Sheridan
 // Program to print the lyrics of 99 bottles of beer on the wall
 public class BottlesOfBeer {
     public static void main(String[] args) {
+        //  declare vars
         int num = 99;
 
         while(num > 0) {

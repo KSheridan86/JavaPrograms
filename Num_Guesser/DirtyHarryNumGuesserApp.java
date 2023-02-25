@@ -18,7 +18,7 @@ public class DirtyHarryNumGuesserApp {
         DirtyHarryNumGuesser game;
         game = new DirtyHarryNumGuesser();
         //inputs
-        System.out.println("\nDo you feel lucky punk?");
+        System.out.println("\nDo you feel lucky, Punk?");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -42,7 +42,7 @@ public class DirtyHarryNumGuesserApp {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("\nYou've got 3 shots to guess the number....GO!!!");
+        System.out.println("\nWell, you've got 3 shots to guess the number....GO!!!");
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -65,14 +65,24 @@ public class DirtyHarryNumGuesserApp {
             //get
             result = game.getResult();
             //output
-            System.out.println("The number we were looking for was " + randomNum);
-            System.out.println(result);
+            System.out.println("\nYou guessed "+ userGuess);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("\nThe number we were looking for was " + randomNum);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(result+"\n");
             turns--;
             if (userGuess == randomNum) {
                 break;
             }
         }
         keyboard.close();
-
     }
 }
