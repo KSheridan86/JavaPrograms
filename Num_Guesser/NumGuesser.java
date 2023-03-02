@@ -1,15 +1,16 @@
 /*
 NumGuesser.java
 Ken Sheridan
-25/02/23
+02/03/23
 */
-public class DirtyHarryNumGuesser{
+
+public class NumGuesser{
     //declare vars
     private int randomNum;
     private int userGuess;
     private String result;
     //constructor
-    public DirtyHarryNumGuesser() {
+    public NumGuesser() {
         randomNum=0;
         userGuess=0;
         result="";
@@ -24,13 +25,13 @@ public class DirtyHarryNumGuesser{
     //compute
     public void checkUserGuess() {
         if(userGuess == randomNum) {
-            result="That is correct you are a Winner!";
+            result="That is correct you are a Winner!\n You guessed these numbers... ";
         } else {
             result = "You are a Loser!";
         }
     }
     //get
     public String getResult() {
-        return result;
+        return result; 
     }
 }
