@@ -1,4 +1,3 @@
-package Dashes;
 /*
 Ken Sheridan
 Dashes.java

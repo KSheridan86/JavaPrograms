@@ -1,4 +1,3 @@
-package Sum_Array;
 /*
 Ken Sheridan
 Sum_Array.java
