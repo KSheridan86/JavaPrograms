@@ -43,12 +43,12 @@ public class AverageApp {
         } while (playAgain == true);
 
         keyboard.close();
-        //set
-        check.setUserNum1(userNum1);
-        check.setUserNum2(userNum2);
-        //compute
-        check.computeAverage();
-        //get
-        average = check.getResult();
+        // //set
+        // check.setUserNum1(userNum1);
+        // check.setUserNum2(userNum2);
+        // //compute
+        // check.computeAverage();
+        // //get
+        // average = check.getResult();
     }
 }
