@@ -1,5 +1,11 @@
-import java.util.*;
+/*
+StringsPracticeApp.java
+Ken Sheridan
+21/03/23
+*/
 
+// App to run a host of checks on a given string and return the results
+import java.util.*;
 public class StringsPracticeApp {
     public static void main(String[] args) {
         // Create a Scanner object to read input from the console
@@ -11,10 +17,10 @@ public class StringsPracticeApp {
         // Read the input string from the console
         String input = keyboard.nextLine();
         
-        // Create an instance of TextAnalyzer with the input string
+        // Create an instance of StringsPractice with the input string
         StringsPractice analyzer = new StringsPractice(input);
         
-        // Call each method of TextAnalyzer to perform text analysis tasks and print the results to the console
+        // Call each method of StringsPractice to perform analysis and print the results to the console
         System.out.println("\nNumber of letters: " + analyzer.countLetters());
         System.out.println("\nNumber of vowels: " + analyzer.countVowels());
         System.out.println("\nEvery second letter: " + analyzer.getEverySecondLetter());

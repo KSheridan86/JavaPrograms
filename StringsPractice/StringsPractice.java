@@ -1,8 +1,14 @@
+/*
+StringsPractice.java
+Ken Sheridan
+21/03/23
+*/
+
 public class StringsPractice {
-    // Declare a private field to store the input string
+    // Vars
     private String input;
 
-    // Constructor that takes in an input string and assigns it to the input field
+    // Constructor
     public StringsPractice(String input) {
         this.input = input;
     }
@@ -11,9 +17,9 @@ public class StringsPractice {
     public int countLetters() {
         int count = 0;
         // Iterate over each character in the input string
-        for (char c : input.toCharArray()) {
+        for (char each : input.toCharArray()) {
             // If the character is a letter, increment the count
-            if (Character.isLetter(c)) {
+            if (Character.isLetter(each)) {
                 count++;
             }
         }
@@ -24,9 +30,9 @@ public class StringsPractice {
     public int countVowels() {
         int count = 0;
         // Iterate over each character in the input string
-        for (char c : input.toCharArray()) {
+        for (char each : input.toCharArray()) {
             // If the character is a vowel, increment the count
-            if (isVowel(c)) {
+            if (isVowel(each)) {
                 count++;
             }
         }
@@ -46,34 +52,34 @@ public class StringsPractice {
 
     // Method to find the positions of each space in the input string
     public String getSpacePositions() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder spaceString = new StringBuilder();
         // Iterate over each character in the input string
         for (int i = 0; i < input.length(); i++) {
             // If the character is a space, append its position to the StringBuilder
             if (input.charAt(i) == ' ') {
-                sb.append(i).append(' ');
+                spaceString.append(i).append(' ');
             }
         }
         // Remove the trailing space from the StringBuilder and return the resulting string
-        return sb.toString().trim();
+        return spaceString.toString().trim();
     }
 
     // Method to replace each vowel in the input string with an exclamation point
     public String replaceVowelsWithExclamation() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder noVowels = new StringBuilder();
         // Iterate over each character in the input string
-        for (char c : input.toCharArray()) {
+        for (char each : input.toCharArray()) {
             // If the character is a vowel, append an exclamation point to the StringBuilder
-            if (isVowel(c)) {
-                sb.append('!');
+            if (isVowel(each)) {
+                noVowels.append('!');
             } else {
-                sb.append(c);
+                noVowels.append(each);
             }
         }
-        return sb.toString();
+        return noVowels.toString();
     }
 
-    private boolean isVowel(char c) {
-        return "aeiouAEIOU".indexOf(c) != -1;
+    private boolean isVowel(char checkVowel) {
+        return "aeiouAEIOU".indexOf(checkVowel) != -1;
     }
 }
