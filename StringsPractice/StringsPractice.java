@@ -7,11 +7,16 @@ Ken Sheridan
 public class StringsPractice {
     // Vars
     private String input;
-
+    // Objects
+    StringBuilder secondLetter = new StringBuilder();
+    StringBuilder spaceString = new StringBuilder();
+    StringBuilder noVowels = new StringBuilder();
     // Constructor
     public StringsPractice(String input) {
         this.input = input;
     }
+
+    // Multiple Classes/Methods to compute the required results
 
     // Method to count the number of letters in the input string
     public int countLetters() {
@@ -41,7 +46,6 @@ public class StringsPractice {
 
     // Method to create a new string that contains every second letter of the input string
     public String getEverySecondLetter() {
-        StringBuilder secondLetter = new StringBuilder();
         // Iterate over the input string with a step of 2
         for (int i = 0; i < input.length(); i += 2) {
             // Append each second character to the StringBuilder
@@ -52,7 +56,6 @@ public class StringsPractice {
 
     // Method to find the positions of each space in the input string
     public String getSpacePositions() {
-        StringBuilder spaceString = new StringBuilder();
         // Iterate over each character in the input string
         for (int i = 0; i < input.length(); i++) {
             // If the character is a space, append its position to the StringBuilder
@@ -66,7 +69,6 @@ public class StringsPractice {
 
     // Method to replace each vowel in the input string with an exclamation point
     public String replaceVowelsWithExclamation() {
-        StringBuilder noVowels = new StringBuilder();
         // Iterate over each character in the input string
         for (char each : input.toCharArray()) {
             // If the character is a vowel, append an exclamation point to the StringBuilder
