@@ -3,88 +3,84 @@ ValidPass.java
 Ken Sheridan
 11/05/23
 */
-
 import java.util.*;
 
 public class ValidPass {
-    // data member
+    // Data members
     private String username;
 
-    // constructor
+    // Constructor
     public ValidPass(String username) {
-        setUsername(username);
+        this.username = username;
     }
-    
-    // setter for username
+    // Setter for username
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    // getter for username
+    // Getter for username
     public String getUsername() {
         return this.username;
     }
-
-    // method to validate username
+    // Compute method to validate username
     public boolean compute() {
         // Check length
         if (username.length() != 24) {
             return false;
         }
-        
         // Check first 3 characters
         if (!username.substring(0, 3).equalsIgnoreCase("aib")) {
             return false;
         }
-        
         // Check characters 4 and 5
-        if (!Character.isDigit(username.charAt(3)) || !Character.isDigit(username.charAt(4))) {
-            return false;
-        }
-        
-        // Check characters 6 to 13
-        if (!username.substring(5, 13).equals("49210955")) {
-            return false;
-        }
-        
-        // Check characters 14 to 21
-        for (int i = 13; i < 21; i++) {
-            if (!Character.isDigit(username.charAt(i))) {
+        for (int i = 3; i < 5; i++) {
+            if (username.charAt(i) >= '0' && username.charAt(i) <= '9') {
+                // Check characters 6 to 13
+                if (!username.substring(5, 13).equals("49210955")) {
+                    return false;
+                }
+                // Check characters 14 to 21
+                for (int j = 13; j < 21; j++) {
+                    if (username.charAt(j) >= '0' && username.charAt(j) <= '9') {
+                        // Check characters 22 to 24
+                        for (int k = 21; k <= 23; k++) {
+                            if (username.charAt(k) >= '0' && username.charAt(k) <= '9') {
+                                if (username.charAt(21) < username.charAt(22)) {
+                                    if (username.charAt(22) < username.charAt(23)) {
+                                        continue;
+                                    } else {
+                                        return false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        }
+                    } else {
+                        return false;
+                    }
+                }
+            } else {
                 return false;
             }
         }
-        
-        // Check characters 22 to 24
-        int prev = -1;
-        for (int i = 21; i < 24; i++) {
-            if (!Character.isDigit(username.charAt(i))) {
-                return false;
-            }
-            
-            int digit = Character.getNumericValue(username.charAt(i));
-            if (digit <= prev) {
-                return false;
-            }
-            
-            prev = digit;
-        }
-        
         // All checks passed
         return true;
     }
 
     // method to generate passwords
-    public String[] generatePasswords(int numPasswords, int[] modNumbers) {
+    public String[] generatePasswords(int numPasswords, int[] modulusNumbers) {
         String[] passwords = new String[numPasswords];
-        Random rand = new Random();
+        Random randomLetter = new Random();
 
         // generate each password
         for (int i = 0; i < numPasswords; i++) {
-            int mod = 49210955 % modNumbers[i]; // perform modulo calculation
-            String password = mod + "@"; // add mod number to password
+            int resultOfModulus = 49210955 % modulusNumbers[i]; // perform modulus calculation
+            String password = resultOfModulus + "@"; // add mod number to password
             for (int j = 0; j < 6; j++) {
-                char c = (char) (rand.nextInt(26) + 'A'); // generate random uppercase letter
-                password += c; // add letter to password
+                char upperCaseLetter = (char)(randomLetter.nextInt(26) + 'A'); // generate random uppercase letter
+                password += upperCaseLetter; // add letter to password
             }
             passwords[i] = password; // add password to array
         }
