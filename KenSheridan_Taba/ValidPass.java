@@ -8,7 +8,6 @@ import java.util.*;
 public class ValidPass {
     // Data members
     private String username;
-
     // Constructor
     public ValidPass(String username) {
         this.username = username;
@@ -76,14 +75,20 @@ public class ValidPass {
 
         // generate each password
         for (int i = 0; i < numPasswords; i++) {
-            int resultOfModulus = 49210955 % modulusNumbers[i]; // perform modulus calculation
-            String password = resultOfModulus + "@"; // add mod number to password
+            // perform modulus calculation
+            int resultOfModulus = 49210955 % modulusNumbers[i];
+            // add resultOfModulus number to password
+            String password = resultOfModulus + "@";
             for (int j = 0; j < 6; j++) {
-                char upperCaseLetter = (char)(randomLetter.nextInt(26) + 'A'); // generate random uppercase letter
-                password += upperCaseLetter; // add letter to password
+                // generate random uppercase letter
+                char upperCaseLetter = (char)(randomLetter.nextInt(26) + 'A');
+                // add letter to password
+                password += upperCaseLetter;
             }
-            passwords[i] = password; // add password to array
+            // add password to array
+            passwords[i] = password;
         }
-        return passwords; // return array of passwords
+        // return array of passwords
+        return passwords;
     }
 }
