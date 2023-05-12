@@ -5,7 +5,7 @@ Ken Sheridan
 */
 
 //Application to validate user inputted usernames/aliases and generate random passwords
-import java.util.Scanner;
+import java.util.*;
 
 public class ValidPassApp {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class ValidPassApp {
         ValidPass newValidPass = new ValidPass("");
         // Loop until user no longer wants to validate a username
         do {
-            // Prompt user to enter username
+            // Prompt user to enter username/alias
             System.out.print("\nEnter alias: ");
             String username = keyboard.nextLine();
             // Set the username of the ValidPass object to the inputted username
