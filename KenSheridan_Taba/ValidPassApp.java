@@ -1,5 +1,5 @@
 /*
-ValidPassAppApp.java
+ValidPassApp.java
 Ken Sheridan
 11/05/23
 */
